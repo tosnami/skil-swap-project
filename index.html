@@ -4,44 +4,80 @@
   <meta charset="UTF-8">
   <title>Home | Skill Swap</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
     <div class="logo">Skill Swap</div>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
     </ul>
     <button id="theme-toggle">🌙 Dark Mode</button>
     <div class="burger" id="burger">☰</div>
   </nav>
 
+  <!-- Hero Section -->
   <header class="hero">
     <h1>Welcome to Skill Swap</h1>
-    <p>Share your skills & learn from others</p>
-    <button id="cta-btn">Get Started</button>
+    <p>Exchange your skills, learn new things, and connect with amazing people around the world.</p>
+    <button id="cta-btn">Start Swapping Skills</button>
   </header>
 
-  <section class="features">
-    <div class="feature">
-      <h2>Teach</h2>
-      <p>Offer your knowledge to the community.</p>
-    </div>
-    <div class="feature">
-      <h2>Learn</h2>
-      <p>Find people who can help you grow.</p>
-    </div>
-    <div class="feature">
-      <h2>Connect</h2>
-      <p>Meet new people and build opportunities.</p>
+  <!-- Browse Skills Section -->
+  <section class="browse-skills">
+    <h2>Browse Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, JavaScript, and more!</p>
+      </div>
+      <div class="skill-card">
+        <h3>Graphic Design</h3>
+        <p>Create stunning visuals and UI designs.</p>
+      </div>
+      <div class="skill-card">
+        <h3>Language Learning</h3>
+        <p>Practice and improve your foreign languages.</p>
+      </div>
     </div>
   </section>
 
+  <!-- Share Skill Section -->
+  <section class="share-skill">
+    <h2>Share Your Skill</h2>
+    <p>Teach what you know and help others grow.</p>
+    <button id="add-skill-btn">Add Your Skill</button>
+
+    <!-- Form hidden by default -->
+    <div id="skill-form-container" style="display:none; margin-top:20px;">
+      <input type="text" id="skill-name" placeholder="Skill Name" required>
+      <textarea id="skill-desc" placeholder="Skill Description" required></textarea>
+      <button id="submit-skill">Submit Skill</button>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <p>"Skill Swap helped me learn JavaScript in just 2 months!"</p>
+        <span>- Ahmed</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"I got to teach graphic design and earn experience too."</p>
+        <span>- Sara</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Skill Swap. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

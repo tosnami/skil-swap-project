@@ -1,22 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General */
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  margin: 0;
   background: #fff;
   color: #333;
   transition: background 0.3s, color 0.3s;
 }
 
 .dark-mode {
-  background: #222;
+  background: #121212;
   color: #ddd;
 }
 
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -25,130 +21,189 @@ nav {
   background: #333;
   color: #fff;
   position: relative;
+  z-index: 1000;
+}
+
+.dark-mode nav {
+  background: #1f1f1f;
 }
 
 nav .logo {
-  font-size: 20px;
   font-weight: bold;
+  font-size: 22px;
 }
 
 nav .nav-links {
   list-style: none;
-  display: flex;
+  display: flex; /* Desktop default */
+  gap: 20px;
 }
 
-nav .nav-links li {
-  margin-left: 20px;
-}
-
-nav .nav-links a {
-  text-decoration: none;
+nav .nav-links li a {
   color: #fff;
-  transition: color 0.3s;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-nav .nav-links a:hover {
-  color: #ff9800;
+.dark-mode nav .nav-links li a {
+  color: #ddd;
 }
 
 #theme-toggle {
   margin-left: 20px;
   padding: 5px 10px;
-  border: none;
-  cursor: pointer;
   border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background: #ff9800;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-/* زرار البورجر */
+#theme-toggle:hover {
+  background: #e68a00;
+}
+
+/* Burger Menu */
 .burger {
   display: none;
-  font-size: 25px;
+  font-size: 28px;
   cursor: pointer;
-  margin-left: 15px;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to right, #ff9800, #ff5722);
   color: #fff;
 }
 
-.hero h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.hero button {
-  padding: 10px 20px;
-  border: none;
-  background: #fff;
-  color: #ff5722;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/* Features */
-.features {
-  display: flex;
-  justify-content: space-around;
-  padding: 50px 20px;
-  background: #f4f4f4;
-  flex-wrap: wrap;
-}
-
-.feature {
-  width: 30%;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.feature h2 {
-  margin-bottom: 10px;
-  color: #ff5722;
-}
-
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #333;
-  color: #fff;
-}
-
-/* Responsive */
+/* Mobile Navbar */
 @media (max-width: 768px) {
   nav .nav-links {
-    display: none;
     flex-direction: column;
     position: absolute;
     top: 60px;
     right: 30px;
     background: #333;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none; /* مخفية افتراضيًا */
+    width: 200px;
+  }
+
+  .dark-mode nav .nav-links {
+    background: #1f1f1f;
   }
 
   nav .nav-links.active {
-    display: flex;
+    display: flex; /* تظهر عند الضغط على burger */
   }
 
   .burger {
     display: block;
   }
+}
 
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #ff9800, #ff5722);
+  color: #fff;
+}
 
-  .feature {
-    width: 80%;
-  }
+.dark-mode .hero {
+  background: linear-gradient(to right, #ff9800cc, #ff5722cc);
+}
+
+/* Buttons */
+.hero button,
+.share-skill button,
+#skill-form-container button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #ff5722;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode .hero button,
+.dark-mode .share-skill button,
+.dark-mode #skill-form-container button {
+  background: #ff5722;
+  color: #fff;
+}
+
+/* Browse Skills */
+.browse-skills { padding: 50px 20px; text-align: center; }
+.skills-container { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px; }
+.skill-card {
+  background: #f4f4f4;
+  padding: 20px;
+  width: 30%;
+  margin: 10px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode .skill-card {
+  background: #1f1f1f;
+  color: #ddd;
+}
+
+/* Share Skill */
+.share-skill { text-align: center; padding: 50px 20px; background: #ffecb3; }
+.dark-mode .share-skill {
+  background: #333;
+  color: #ddd;
+}
+
+#skill-form-container input,
+#skill-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+}
+
+.dark-mode #skill-form-container input,
+.dark-mode #skill-form-container textarea {
+  background: #1f1f1f;
+  color: #ddd;
+  border: 1px solid #555;
+}
+
+/* Testimonials */
+.testimonials { text-align: center; padding: 50px 20px; background: #f4f4f4; }
+.dark-mode .testimonials {
+  background: #1a1a1a;
+  color: #ddd;
+}
+.testimonial-cards { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+.testimonial-card {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode .testimonial-card {
+  background: #2a2a2a;
+  color: #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+footer { text-align: center; padding: 15px; background: #333; color: #fff; }
+.dark-mode footer { background: #1f1f1f; color: #ddd; }
+
+/* Responsive Skills & Testimonials */
+@media (max-width: 768px) {
+  .skills-container, .testimonial-cards { flex-direction: column; align-items: center; }
+  .skill-card, .testimonial-card { width: 80%; }
 }
