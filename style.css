@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #222;
+  color: #ddd;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #333;
+  color: #fff;
+  position: relative;
+}
+
+nav .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin-left: 20px;
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+  color: #ff9800;
+}
+
+#theme-toggle {
+  margin-left: 20px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* زرار البورجر */
+.burger {
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #ff9800, #ff5722);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.hero button {
+  padding: 10px 20px;
+  border: none;
+  background: #fff;
+  color: #ff5722;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+  background: #f4f4f4;
+  flex-wrap: wrap;
+}
+
+.feature {
+  width: 30%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feature h2 {
+  margin-bottom: 10px;
+  color: #ff5722;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  nav .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 80%;
+  }
+}
