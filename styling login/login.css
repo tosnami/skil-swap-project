@@ -86,3 +86,7 @@ button:hover {
   color: #e50914;
   text-decoration: none;
 }
+@media (max-width: 768px) {
+  .skills-container, .testimonial-cards { flex-direction: column; align-items: center; }
+  .skill-card, .testimonial-card { width: 80%; }
+}
