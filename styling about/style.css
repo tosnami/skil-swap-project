@@ -1,0 +1,147 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  transition: 0.3s;
+}
+
+/* Navbar */
+header {
+  background: #222;
+  color: #fff;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: orange;
+}
+
+.dark-mode-btn {
+  background: #fff;
+  color: #222;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #ff6600, #ff9900);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+/* About Content */
+.about-content {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.about-box {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.about-box:hover {
+  transform: translateY(-5px);
+}
+
+.about-box h2 {
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.about-box p {
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 50px;
+}
+
+/* Dark Mode Styles */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .about-box {
+  background: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .about-box h2 {
+  color: #ff9900;
+}
+
+body.dark .nav-links li a {
+  color: #fff;
+}
+
+body.dark footer {
+  background: #111;
+}
+
+body.dark .dark-mode-btn {
+  background: #444;
+  color: #fff;
+}
